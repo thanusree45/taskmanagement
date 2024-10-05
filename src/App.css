@@ -1,38 +1,167 @@
-.App {
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+.main-container
+{
+background-image:url('./assets/bg.jpg');
+background-size: cover;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
   text-align: center;
+  text-decoration: none;
+  color: white;
+  background-color: #007bff; /* Change this to your preferred color */
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.button:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Forms */
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+form div {
+  margin-bottom: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* User Dashboard */
+.user-dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-dashboard h2 {
+  margin-bottom: 20px;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-list li:last-child {
+  border-bottom: none;
+}
+
+.task-list .task-title {
+  font-weight: bold;
+}
+
+.task-list .task-status {
+  margin-top: 5px;
+}
+
+.task-list button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.task-list button:hover {
+  background-color: #218838;
+}
+
+/* Admin Dashboard */
+.admin-dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-dashboard h2 {
+  margin-bottom: 20px;
+}
+
+.user-list, .task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.user-list li, .task-list li {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-list li:last-child, .task-list li:last-child {
+  border-bottom: none;
+}
+
+.user-list button, .task-list button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.user-list button:hover, .task-list button:hover {
+  background-color: #0056b3;
 }

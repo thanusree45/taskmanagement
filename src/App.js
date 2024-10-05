@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
+import Register from './components/register';
+import AdminLogin from './components/AdminLogin';
+import UserLogin from './components/UserLogin';
 import './App.css';
+
+const Navigation = () => {
+  const location = useLocation();
+
+  return (
+    <nav>
+      {location.pathname !== '/register' && location.pathname !== '/admin-login' && location.pathname !== '/user-login' && (
+        <>
+          <Link to="/register" className="button">Register</Link>
+          <br />
+          <Link to="/admin-login" className="button">Admin Login</Link>
+          <br />
+          <Link to="/user-login" className="button">User Login</Link>
+        </>
+      )}
+    </nav>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className='main-container'>
+        <h1>ADMIN / EMPLOYEE DASHBOARD</h1>
+        <Navigation />
+        <Routes>
+          <Route path="/register" element={<Register />} />
+          <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/user-login" element={<UserLogin />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
